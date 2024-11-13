@@ -12,7 +12,6 @@ namespace NewC_3_5
             int minRandomNumbers = 1;
             int maxRandomNumbers = 6;
             int quantitiesRepetitions = 1;
-            int number;
             int maxQuantitiesRepetitions = 1;
             int maxQuantitiesRepetitionsNumber = 0;
             int moreOneMaxRepetition = 0;
@@ -25,30 +24,23 @@ namespace NewC_3_5
                 Console.Write($"{numbers[i]} ");
             }
 
-            for (int i = 0; i < numbers.Length; i++)
+            for (int i = 1; i < numbers.Length; i++)
             {
-                number = numbers[i];
-
-                for (int j = i + 1; j < numbers.Length; j++)
-                {
-                    if (numbers[j] == number)
-                        quantitiesRepetitions++;
-                    else
-                        break;
-                }
+                if (numbers[i] == numbers[i-1])
+                    quantitiesRepetitions++;
+                else
+                    quantitiesRepetitions = 1;
 
                 if (quantitiesRepetitions > maxQuantitiesRepetitions)
                 {
                     maxQuantitiesRepetitions = quantitiesRepetitions;
-                    maxQuantitiesRepetitionsNumber = number;
+                    maxQuantitiesRepetitionsNumber = numbers[i];
                     moreOneMaxRepetition = 0;
                 }
                 else if (quantitiesRepetitions == maxQuantitiesRepetitions)
                 {
                     moreOneMaxRepetition++;
                 }
-
-                quantitiesRepetitions = 1;
             }
 
             if (moreOneMaxRepetition == 0)
