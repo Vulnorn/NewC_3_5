@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewC_3_3
+namespace NewC_3_5
 {
     internal class Program
     {
