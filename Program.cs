@@ -32,26 +32,23 @@ namespace NewC_3_5
                 for (int j = i + 1; j < numbers.Length; j++)
                 {
                     if (numbers[j] == number)
-                    {
                         quantitiesRepetitions++;
-                    }
                     else
-                    {
-                        if (quantitiesRepetitions > maxQuantitiesRepetitions)
-                        {
-                            maxQuantitiesRepetitions = quantitiesRepetitions;
-                            maxQuantitiesRepetitionsNumber = number;
-                            moreOneMaxRepetition = 0;
-                        }
-                        else if (quantitiesRepetitions == maxQuantitiesRepetitions)
-                        {
-                            moreOneMaxRepetition++;
-                        }
-
-                        quantitiesRepetitions = 1;
                         break;
-                    }
                 }
+
+                if (quantitiesRepetitions > maxQuantitiesRepetitions)
+                {
+                    maxQuantitiesRepetitions = quantitiesRepetitions;
+                    maxQuantitiesRepetitionsNumber = number;
+                    moreOneMaxRepetition = 0;
+                }
+                else if (quantitiesRepetitions == maxQuantitiesRepetitions)
+                {
+                    moreOneMaxRepetition++;
+                }
+
+                quantitiesRepetitions = 1;
             }
 
             if (moreOneMaxRepetition == 0)
